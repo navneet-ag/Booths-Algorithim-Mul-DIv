@@ -6,25 +6,25 @@ def RestoringDivision(Dividend,Divisor):
 	Q=Dividend
 	M=Divisor
 	length=len(M)
-	while length<5:
+	while length<len(Dividend)+1:
 		M="0"+M
 		length+=1
 	MinusM=TwosCompliment(M)
 	print(MinusM)
-	A="00000"
+	A="0"*len(M)
 	while(n>0):
 		print(M,A,Q,n)
 		LeftShiftQ=Q[1:]
 		A=A[1:]+Q[0]
 		print(M,A,LeftShiftQ,n)
 		LeftShiftA=bin(int(A,2)+int(MinusM,2))[2:]
-		if(len(LeftShiftA)>5):
+		if(len(LeftShiftA)>len(Dividend)+1):
 			LeftShiftA=LeftShiftA[::-1]
-			LeftShiftA=LeftShiftA[:5]
+			LeftShiftA=LeftShiftA[:len(Dividend)+1]
 			LeftShiftA=LeftShiftA[::-1]
-		elif(len(LeftShiftA)<5):
+		elif(len(LeftShiftA)<len(Dividend)+1):
 			Temp=len(LeftShiftA)
-			while(Temp<5):
+			while(Temp<len(Dividend)+1):
 				LeftShiftA="0"+LeftShiftA
 				Temp+=1
 
@@ -39,4 +39,7 @@ def RestoringDivision(Dividend,Divisor):
 	print(Q,A)
 	print(int(Q,2),int(A,2))
 if __name__ == '__main__':
-	RestoringDivision(bin(1000)[2:],bin(18)[2:])
+	a=1000
+	b=504
+	print(a,b)
+	RestoringDivision(bin(a)[2:],bin(b)[2:])
