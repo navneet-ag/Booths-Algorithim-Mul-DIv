@@ -1,6 +1,6 @@
-def TwosCompliment(a):
+def TwosCompliment(astr):
 	#a is a binary number in string form
-	astr=a[2:]
+	# astr=a[2:]
 	length=len(astr)
 	OnesCompliment=""
 	for i in astr:
@@ -8,9 +8,8 @@ def TwosCompliment(a):
 			OnesCompliment+="0"
 		else:
 			OnesCompliment+="1"
-	print(OnesCompliment)
+	# print(OnesCompliment)
 	answer=bin(int(OnesCompliment,2)+int("1",2))
-
 	answer=answer[2:]
 	length2=len(answer)
 	while(length2<length):
@@ -18,7 +17,9 @@ def TwosCompliment(a):
 		length2+=1
 	return(answer)
 
-a=int(input())
-a=bin(a)
-print(a[2:])
-print(TwosCompliment(a))
+
+if __name__ == '__main__':
+	a=int(input())
+	a=bin(a)
+	print(a[2:])
+	print(TwosCompliment(a[2:]))
