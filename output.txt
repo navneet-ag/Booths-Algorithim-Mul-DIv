@@ -1,0 +1,2 @@
+Product in binary form : 11101011
+Product in decimal form : -21
