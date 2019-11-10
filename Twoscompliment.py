@@ -22,4 +22,4 @@ if __name__ == '__main__':
 	a=int(input())
 	a=bin(a)
 	print(a[2:])
-	print(TwosCompliment(a[2:]))
+	print(TwosCompliment(a[2:]),TwosCompliment(TwosCompliment(a[2:])))
