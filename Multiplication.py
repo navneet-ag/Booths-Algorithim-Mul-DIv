@@ -47,7 +47,7 @@ def BinaryAddition(x, y):
 
 
 
-RegSize=12
+RegSize=4
 Multiplicand=7
 SaveMultiplicand=Multiplicand
 Multiplier=3
@@ -70,7 +70,7 @@ if (len(Multiplicand)<RegSize):
     Multiplicand=(('0'*(RegSize-len(Multiplicand)))+str(Multiplicand))
 if (len(Multiplier)<RegSize):
     Multiplier=(('0'*(RegSize-len(Multiplier)))+str(Multiplier))
-# NegMultiplicand=TwosCompliment(Multiplicand)
+
 # NegMultiplier=TwosCompliment(Multiplier)
 
 if SaveMultiplicand<0:
@@ -79,6 +79,7 @@ if SaveMultiplicand<0:
 if SaveMultiplier<0:
     Multiplier=TwosCompliment(Multiplier)
 
+NegMultiplicand=TwosCompliment(Multiplicand)
 # print(Multiplicand)
 # print(Multiplier)
 
@@ -94,7 +95,8 @@ Qn1=0
 for i in range(RegSize):
     # print(Multiplier)
     if (str(Multiplier[-1]+str(Qn1))=="10"):
-        AC=BinaryAddition(AC,TwosCompliment(Multiplicand))[-RegSize:]
+
+        AC=BinaryAddition(AC,(NegMultiplicand))[-RegSize:]
 
     elif(str(Multiplier[-1]+str(Qn1))=="01"):
         AC=BinaryAddition(AC,Multiplicand)[-RegSize:]
@@ -117,7 +119,7 @@ for i in range(RegSize):
 # print(AC)
 # print(Multiplier)
 # print(Qn1)
-
+print(AC+Multiplier)
 if(SaveMultiplicand*SaveMultiplier<0):
     print(-int(TwosCompliment(AC+Multiplier),2))
 else:
