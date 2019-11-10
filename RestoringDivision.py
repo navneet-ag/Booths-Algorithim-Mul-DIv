@@ -57,7 +57,6 @@ def RestoringDivision(Dividend,Divisor):
 		LeftShiftQ=Q[1:]
 		A=A[1:]+Q[0]
 		# print(M,A,LeftShiftQ,n)
-		# LeftShiftA=bin(int(A,2)+int(MinusM,2))[2:]
 		LeftShiftA=BinaryAddition2(A,MinusM)
 		if(len(LeftShiftA)>len(Dividend)+1):
 			LeftShiftA=LeftShiftA[::-1]
@@ -93,5 +92,3 @@ if __name__ == '__main__':
 	a=int(input())
 	b=int(input())
 	RestoringDivision(a,b)
-	print(BinaryAddition2("0111","0111"))
-	print(bin(int("0111",2)+int("0111",2))[2:])
